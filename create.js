@@ -60,7 +60,7 @@ async function createProduct(client, newProduct) {
 // insertMany()
 async function createMultipleProducts(client, newProducts) {
   const result = await client
-    .db("training")
+    .db("sample_training")
     .collection("products")
     .insertMany(newProducts);
 
