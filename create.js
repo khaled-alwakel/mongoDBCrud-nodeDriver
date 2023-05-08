@@ -10,34 +10,34 @@ async function main() {
     await client.connect();
 
     // insertOne();
-    await createProduct(client, {
-      category: "mobile phones",
-      name: "iphone 15",
-      color: "black",
-      price: 1500,
-    });
+    // await createProduct(client, {
+    //   category: "mobile phones",
+    //   name: "iphone 15",
+    //   color: "black",
+    //   price: 1500,
+    // });
 
     // insertMany() notice the flexible Schema
-    // await createMultipleProducts(client, [
-    //   {
-    //     category: "pc",
-    //     name: "hp pro desk g1",
-    //     color: "black",
-    //     price: 1300,
-    //   },
-    //   {
-    //     category: "mobile workstation",
-    //     name: "dell precision m4800",
-    //     color: "black",
-    //     price: 2500,
-    //   },
-    //   {
-    //     category: "smart watch",
-    //     name: "apple watch",
-    //     color: "black",
-    //     price: 500,
-    //   },
-    // ]);
+    await createMultipleProducts(client, [
+      {
+        category: "pc",
+        name: "hp pro desk g1",
+        color: "black",
+        price: 1300,
+      },
+      {
+        category: "mobile workstation",
+        name: "dell precision m4800",
+        color: "black",
+        price: 2500,
+      },
+      {
+        category: "smart watch",
+        name: "apple watch",
+        color: "black",
+        price: 500,
+      },
+    ]);
   } catch (e) {
     console.error(e);
   } finally {
@@ -57,15 +57,15 @@ async function createProduct(client, newProduct) {
   );
 }
 
-// // insertMany()
-// async function createMultipleListings(client, newListings) {
-//   const result = await client
-//     .db("sample_analytics")
-//     .collection("listingsAndReviews")
-//     .insertMany(newListings);
+// insertMany()
+async function createMultipleProducts(client, newProducts) {
+  const result = await client
+    .db("training")
+    .collection("products")
+    .insertMany(newProducts);
 
-//   console.log(
-//     `${result.insertedCount} new listing(s) created with the following id(s):`
-//   );
-//   console.log(result.insertedIds);
-// }
+  console.log(
+    `${result.insertedCount} new listing(s) created with the following id(s):`
+  );
+  console.log(result.insertedIds);
+}
