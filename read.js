@@ -9,13 +9,6 @@ async function main() {
     await client.connect();
     //read- findOne()
     await findOneProductByName(client, "iphone 15");
-
-    //find()
-    // await findListingsWithMinimumBedroomsBathroomsAndMostRecentReviews(client, {
-    //   minimumNumberOfBedrooms: 4,
-    //   minimumNumberOfBathrooms: 2,
-    //   maximumNumberOfResults: 5,
-    // });
   } catch (e) {
     console.error(e);
   } finally {
