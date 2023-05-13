@@ -1,8 +1,5 @@
-let uri =
-  "mongodb+srv://Khaled-Alwakel:rTZfq8uZiiJmQw0e@cluster0.g1hid9r.mongodb.net/sample_training?retryWrites=true&w=majority";
-
 const { MongoClient } = require("mongodb");
-const client = new MongoClient(uri);
+const client = new MongoClient("mongodb://localhost:27017/mongo_crud");
 
 async function main() {
   try {
@@ -10,12 +7,12 @@ async function main() {
     await client.connect();
 
     // insertOne();
-    // await createProduct(client, {
-    //   category: "mobile phones",
-    //   name: "iphone 15",
-    //   color: "black",
-    //   price: 1500,
-    // });
+    await createProduct(client, {
+      category: "mobile phones",
+      name: "iphone 15",
+      color: "black",
+      price: 1500,
+    });
 
     // insertMany() notice the flexible Schema
     await createMultipleProducts(client, [

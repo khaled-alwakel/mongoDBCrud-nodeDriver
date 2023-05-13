@@ -1,9 +1,5 @@
-let uri =
-  "mongodb+srv://Khaled-Alwakel:rTZfq8uZiiJmQw0e@cluster0.g1hid9r.mongodb.net/sample_training?retryWrites=true&w=majority";
-
 const { MongoClient } = require("mongodb");
-const client = new MongoClient(uri);
-
+const client = new MongoClient("mongodb://localhost:27017/mongo_crud");
 async function main() {
   try {
     await client.connect();
