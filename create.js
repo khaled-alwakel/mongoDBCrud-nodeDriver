@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-const client = new MongoClient("mongodb://localhost:27017/mongo_crud");
+const client = new MongoClient("mongodb://localhost:27017/sample_training");
 
 async function main() {
   try {
@@ -43,6 +43,7 @@ async function main() {
 }
 
 main().catch(console.error);
+
 // insertOne()
 async function createProduct(client, newProduct) {
   const result = await client

@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-const client = new MongoClient("mongodb://localhost:27017/mongo_crud");
+const client = new MongoClient("mongodb://localhost:27017/sample_training");
 
 async function main() {
   try {
